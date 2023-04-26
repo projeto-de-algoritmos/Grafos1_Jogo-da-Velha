@@ -1,5 +1,5 @@
 
-# Jofo da Velha
+# Jogo da Velha
 
 **Número da Lista**: X<br>
 **Conteúdo da Disciplina**: Grafos 1<br>
@@ -7,8 +7,8 @@
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0103792 |Júlia Farias Sousa|
+| xx/xxxxxx  |Yuri Alves Bacarias|
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
