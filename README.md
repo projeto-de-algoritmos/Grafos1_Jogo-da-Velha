@@ -8,7 +8,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 18/0103792 |Júlia Farias Sousa|
-| xx/xxxxxx  |Yuri Alves Bacarias|
+| 18/0078640 |Yuri Alves Bacarias|
 
 ## Sobre 
 O objetivo do projeto é trabalhar Grafos utilizando o algoritmo minimax.
