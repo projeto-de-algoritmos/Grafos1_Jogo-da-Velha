@@ -2,7 +2,7 @@ import "./Pontuacao.css";
 
 function Pontuacao({ pontuacoes }) {
   return (
-    <div className="Pontuacoes">
+    <div className="Pontuacao">
       <div>
         <span>Jogador</span>
         <br />

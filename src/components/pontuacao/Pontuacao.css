@@ -1,22 +1,22 @@
-.pontuacoes {
+.Pontuacao {
     display: flex;
     color: #fff;
-    font-size: 26px;
+    font-size: 25px;
     justify-content: space-between;
     margin-top: 26px;
     font-weight: 100;
   }
-  .pontuacoes div {
+  .Pontuacao div {
     width: 150px;
     text-align: center;
     line-height: 35px;
   }
   
   @media (max-width: 700px) {
-    .pontuacoes {
+    .Pontuacao {
       font-size: 22px;
     }
-    .pontuacoes div {
+    .Pontuacao div {
       width: 100px;
     }
   }

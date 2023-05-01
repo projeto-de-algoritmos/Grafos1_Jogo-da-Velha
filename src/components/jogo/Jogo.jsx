@@ -13,7 +13,7 @@ function Jogo() {
 
   return (
     <div className="Jogo">
-      <Tabuleiro setPontuacoes={setPontuacao}/>
+      <Tabuleiro setPontuacao ={setPontuacao}/>
       <Pontuacao pontuacoes={pontuacoes}/>
     </div>
   );
