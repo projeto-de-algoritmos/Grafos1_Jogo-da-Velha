@@ -12,7 +12,11 @@ function Jogo() {
   });
 
   return (
+    
     <div className="Jogo">
+      <div className="Header">
+      <span className="title"/>
+      </div>
       <Tabuleiro setPontuacao ={setPontuacao}/>
       <Pontuacao pontuacoes={pontuacoes}/>
     </div>

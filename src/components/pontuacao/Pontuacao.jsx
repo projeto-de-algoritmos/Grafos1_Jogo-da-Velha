@@ -4,12 +4,12 @@ function Pontuacao({ pontuacoes }) {
   return (
     <div className="Pontuacao">
       <div>
-        <span>Jogador</span>
+        <span>Empate</span>
         <br />
         <span>{pontuacoes.x}</span>
       </div>
       <div>
-        <span>Empate</span>
+        <span>Jogador</span>
         <br />
         <span>{pontuacoes.empate}</span>
       </div>

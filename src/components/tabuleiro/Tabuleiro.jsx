@@ -25,8 +25,8 @@ function Tabuleiro({ setPontuacao }) {
 
   const getJogadasPossiveis = (tabuleiro) => {
     const movimento = [];
-    tabuleiro.forEach((cell, index) => {
-      if (!cell) movimento.push(index);
+    tabuleiro.forEach((celula, index) => {
+      if (!celula) movimento.push(index);
     });
     return movimento;
   };
