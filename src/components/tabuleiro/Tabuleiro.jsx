@@ -40,7 +40,7 @@ function Tabuleiro({ setScores }) {
     if (isTerminal(tabuleiroEditado).vencedor === "X") {
       console.log(isTerminal(tabuleiroEditado));
       setLinha(isTerminal(tabuleiroEditado).linha);
-      setPontuacoes((anterior) => ({ ...anterior, x: anterior.x + 1 }));
+      setPontuacoes((anterior) => ({ ...anterior, espaco: anterior.espaco + 1 }));
       return;
     }
 
