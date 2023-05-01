@@ -1,7 +1,19 @@
 import { useState } from "react";
 import "./Tabuleiro.css";
 
-function Tabuleiro({ setScores }) {
+function Quadrado ({ id, value, handleClick, tabuleiro }) {
+  return (
+    <div id={id} onClick={() => handleClick(id)} className="quadrado">
+      <p className={
+          id === tabuleiro[0] || id === tabuleiro[1] || id === tabuleiro[2] ? "trocado" : ""
+        }>
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function Tabuleiro({ setPontuacao }) {
   const [no, setNo] = useState({});
   const [tabuleiro, setTabuleiro] = useState(Array(9).fill(""));
   const [linha, setLinha] = useState([]);
@@ -39,7 +51,7 @@ function Tabuleiro({ setScores }) {
     if (isTerminal(tabuleiroEditado).vencedor === "X") {
       console.log(isTerminal(tabuleiroEditado));
       setLinha(isTerminal(tabuleiroEditado).linha);
-      setPontuacoes((anterior) => ({ ...anterior, espaco: anterior.espaco + 1 }));
+      setPontuacao((anterior) => ({ ...anterior, empate: anterior.empate + 1 }));
       return;
     }
 
@@ -52,12 +64,12 @@ function Tabuleiro({ setScores }) {
 
     if (isTerminal(tabuleiroEditado).vencedor === "O") {
       setLinha(isTerminal(tabuleiroEditado).linha);
-      setPontuacoes((anterior) => ({ ...anterior, o: anterior.o + 1 }));
+      setPontuacao((anterior) => ({ ...anterior, o: anterior.o + 1 }));
       return;
     }
 
     if (isTerminal(tabuleiroEditado).vencedor === "Desenho") {
-      setPontuacoes((anterior) => ({ ...anterior, x: anterior.x + 1 }));
+      setPontuacao((anterior) => ({ ...anterior, x: anterior.x + 1 }));
     }
   };
 
@@ -99,14 +111,14 @@ function Tabuleiro({ setScores }) {
       return { vencedor: tabuleiro[2], linha: [2, 4, 6] };
     }
 
-    if (isFull(tabuleiro)) {
+    if (isCheio(tabuleiro)) {
       return { vencedor: "Desenho" };
     }
 
     return false;
   };
 
-  const getMelhorJogada = (newtabuleiro, depth, isCheio, callback = () => {}) => {
+  const getMelhorJogada = (newtabuleiro, depth, isMax, callback = () => {}) => {
     if (depth === 0) setNo({});
 
     if (isTerminal(newtabuleiro) || depth === -1) {
@@ -118,21 +130,21 @@ function Tabuleiro({ setScores }) {
       return 0;
     }
 
-    if (isMaximo) {
+    if (isMax) {
       let melhor = -100;
 
       getJogadasPossiveis(newtabuleiro).forEach((index) => {
         let filho = [...newtabuleiro];
         filho[index] = "X";
 
-        let pontuacao = getBestMove(filho, depth + 1, false, callback);
+        let pontuacao = getMelhorJogada(filho, depth + 1, false, callback);
         melhor = Math.max(melhor, pontuacao);
       });
 
       return melhor;
     }
 
-    if (!isMaximo) {
+    if (!isMax) {
       let melhor = 100;
 
       getJogadasPossiveis(newtabuleiro).forEach((index) => {
@@ -167,19 +179,7 @@ function Tabuleiro({ setScores }) {
   };
 
 
-  const Quadrado = ({ id, value, handleClick, tabuleiro }) => {
-    return (
-      <div id={id} onClick={() => handleClick(id)} className="quadrado">
-        <p className={
-            id === tabuleiro[0] || id === tabuleiro[1] || id === tabuleiro[2] ? "trocado" : ""
-          }>
-          {value}
-        </p>
-      </div>
-    );
-  }
   
-
   return (
     <div className="tabuleiro">
       {tabuleiro.map((val, i) => {

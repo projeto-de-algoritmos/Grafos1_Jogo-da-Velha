@@ -9,9 +9,9 @@ function Pontuacao({ pontuacoes }) {
         <span>{pontuacoes.x}</span>
       </div>
       <div>
-        <span>Espaco</span>
+        <span>Empate</span>
         <br />
-        <span>{pontuacoes.espaco}</span>
+        <span>{pontuacoes.empate}</span>
       </div>
       <div>
         <span>Computador</span>
