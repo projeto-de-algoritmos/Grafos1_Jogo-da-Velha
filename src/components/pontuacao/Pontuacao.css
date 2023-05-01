@@ -1,0 +1,22 @@
+.pontuacoes {
+    display: flex;
+    color: #fff;
+    font-size: 26px;
+    justify-content: space-between;
+    margin-top: 26px;
+    font-weight: 100;
+  }
+  .pontuacoes div {
+    width: 150px;
+    text-align: center;
+    line-height: 35px;
+  }
+  
+  @media (max-width: 700px) {
+    .pontuacoes {
+      font-size: 22px;
+    }
+    .pontuacoes div {
+      width: 100px;
+    }
+  }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Square from "../Square/Square";
 import "./Tabuleiro.css";
 
 function Tabuleiro({ setScores }) {
@@ -167,11 +166,25 @@ function Tabuleiro({ setScores }) {
     }
   };
 
+
+  const Quadrado = ({ id, value, handleClick, tabuleiro }) => {
+    return (
+      <div id={id} onClick={() => handleClick(id)} className="quadrado">
+        <p className={
+            id === tabuleiro[0] || id === tabuleiro[1] || id === tabuleiro[2] ? "trocado" : ""
+          }>
+          {value}
+        </p>
+      </div>
+    );
+  }
+  
+
   return (
     <div className="tabuleiro">
       {tabuleiro.map((val, i) => {
         return (
-          <Square
+          <Quadrado
             key={i}
             id={i}
             value={val}
